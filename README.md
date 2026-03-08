@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CoverCraft AI
+
+AI-powered cover letter generator that creates tailored, professional cover letters in 30 seconds.
+
+**Live:** [coverletter-ai-dun.vercel.app](https://coverletter-ai-dun.vercel.app/)
+
+## What it does
+
+Paste a job description and your resume. The AI analyzes both, identifies the strongest matches between your experience and their requirements, and writes a professional cover letter highlighting exactly why you're the right candidate.
+
+## Features
+
+- **AI Cover Letters ($3.99)** — Tailored to each specific job posting. Free preview included.
+- **AI Interview Prep ($4.99)** — Custom interview questions, answer strategies, and preparation tips.
+- **Free ATS Match Score** — See how well your resume matches a job description with a visual score.
+- **Free Keyword Scanner** — Extract skills, requirements, and keywords from any job posting.
+- **SEO Blog** — Career advice articles for organic traffic.
+
+## Tech Stack
+
+- **Framework:** Next.js 16 (App Router, TypeScript)
+- **AI:** Anthropic Claude API
+- **Payments:** Stripe Checkout
+- **Styling:** Tailwind CSS
+- **Hosting:** Vercel
+- **Analytics:** Vercel Analytics
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
+cp .env.local.example .env.local
+# Add your API keys to .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+ANTHROPIC_API_KEY=sk-ant-xxxxx
+STRIPE_SECRET_KEY=sk_xxxxx
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_xxxxx
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+STRIPE_PRICE_ID=price_xxxxx
+STRIPE_INTERVIEW_PRICE_ID=price_xxxxx
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture
 
-## Learn More
+```
+src/app/
+  page.tsx              # Main landing page (cover letter generator)
+  interview/            # Interview prep product
+  result/               # Post-payment cover letter delivery
+  tools/
+    match/              # Free ATS match score tool
+    keywords/           # Free keyword scanner tool
+  blog/                 # SEO content
+  api/
+    preview/            # Free preview endpoint (Claude API)
+    checkout/           # Stripe checkout session creation
+    generate/           # Full cover letter generation (paid)
+    interview-*/        # Interview prep endpoints
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Pricing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Product | Price | Model |
+|---------|-------|-------|
+| Cover Letter | $3.99 | Pay-per-use |
+| Interview Prep | $4.99 | Pay-per-use |
+| ATS Match Score | Free | Client-side |
+| Keyword Scanner | Free | Client-side |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+No subscriptions. Compare to $15-149/month for competitors.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
