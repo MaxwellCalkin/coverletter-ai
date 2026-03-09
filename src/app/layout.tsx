@@ -65,7 +65,9 @@ export default function RootLayout({
                 "@type": "Offer",
                 price: "3.99",
                 priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
               },
+              url: "https://coverletter-ai-dun.vercel.app",
             }),
           }}
         />
