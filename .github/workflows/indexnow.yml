@@ -1,0 +1,32 @@
+name: IndexNow - Notify Search Engines
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/app/**/page.tsx'
+      - 'src/app/**/layout.tsx'
+      - 'src/app/sitemap.ts'
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping IndexNow
+        run: |
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "coverletter-ai-dun.vercel.app",
+              "key": "d4f8a2b1c3e5f6a7b8c9d0e1f2a3b4c5",
+              "urlList": [
+                "https://coverletter-ai-dun.vercel.app/",
+                "https://coverletter-ai-dun.vercel.app/interview",
+                "https://coverletter-ai-dun.vercel.app/tools/match",
+                "https://coverletter-ai-dun.vercel.app/tools/keywords",
+                "https://coverletter-ai-dun.vercel.app/blog",
+                "https://coverletter-ai-dun.vercel.app/blog/ats-resume-tips",
+                "https://coverletter-ai-dun.vercel.app/blog/cover-letter-examples"
+              ]
+            }'
+          echo "IndexNow pinged successfully"
