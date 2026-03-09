@@ -282,11 +282,41 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-200 py-6">
-        <div className="mx-auto max-w-5xl px-6 text-center text-sm text-slate-500">
-          CoverCraft AI &mdash; AI-powered job application tools
-          <span className="mx-2">&middot;</span>
-          <a href="/interview" className="text-blue-600 hover:underline">Interview Prep</a>
+      <footer className="border-t border-slate-200 py-8">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+            <div>
+              <h4 className="font-semibold text-slate-800 text-sm mb-2">Products</h4>
+              <ul className="space-y-1 text-sm">
+                <li><a href="/" className="text-slate-500 hover:text-blue-600">Cover Letter Generator</a></li>
+                <li><a href="/interview" className="text-slate-500 hover:text-blue-600">Interview Prep</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-800 text-sm mb-2">Free Tools</h4>
+              <ul className="space-y-1 text-sm">
+                <li><a href="/tools/match" className="text-slate-500 hover:text-blue-600">ATS Match Score</a></li>
+                <li><a href="/tools/keywords" className="text-slate-500 hover:text-blue-600">Keyword Scanner</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-800 text-sm mb-2">Resources</h4>
+              <ul className="space-y-1 text-sm">
+                <li><a href="/blog" className="text-slate-500 hover:text-blue-600">AI Cover Letter Guide</a></li>
+                <li><a href="/blog/cover-letter-examples" className="text-slate-500 hover:text-blue-600">Cover Letter Examples</a></li>
+                <li><a href="/blog/ats-resume-tips" className="text-slate-500 hover:text-blue-600">ATS Resume Tips</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-slate-800 text-sm mb-2">About</h4>
+              <p className="text-sm text-slate-500">
+                AI-powered job application tools. No subscriptions, pay only when you need one.
+              </p>
+            </div>
+          </div>
+          <div className="text-center text-sm text-slate-400 border-t border-slate-100 pt-4">
+            CoverCraft AI &mdash; AI-powered job application tools
+          </div>
         </div>
       </footer>
     </div>

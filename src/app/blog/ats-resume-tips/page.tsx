@@ -352,6 +352,13 @@ function Footer() {
     <footer className="border-t border-slate-200 py-6">
       <div className="mx-auto max-w-3xl px-6 text-center text-sm text-slate-500">
         CoverCraft AI &mdash; AI-powered cover letter generator
+        <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
+          <a href="/blog" className="text-blue-600 hover:underline">AI Cover Letter Guide</a>
+          <a href="/blog/cover-letter-examples" className="text-blue-600 hover:underline">Cover Letter Examples</a>
+          <a href="/tools/match" className="text-blue-600 hover:underline">Free ATS Match Score</a>
+          <a href="/tools/keywords" className="text-blue-600 hover:underline">Keyword Scanner</a>
+          <a href="/interview" className="text-blue-600 hover:underline">Interview Prep</a>
+        </div>
       </div>
     </footer>
   );
