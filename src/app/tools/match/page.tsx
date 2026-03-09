@@ -178,6 +178,31 @@ export default function MatchScorer() {
                     ? "Moderate match. Adding the missing keywords below could significantly improve your chances."
                     : "Low match. Your resume is missing several key skills from this job posting."}
               </p>
+              <div className="mt-4 flex items-center justify-center gap-3">
+                <span className="text-xs text-slate-400">Share your score:</span>
+                <a
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`I got a ${results.score}% ATS match score on my resume! Check yours for free:`)}&url=${encodeURIComponent("https://coverletter-ai-dun.vercel.app/tools/match")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs px-3 py-1.5 rounded-full bg-slate-900 text-white hover:bg-slate-700 transition-colors"
+                >
+                  Share on X
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent("https://coverletter-ai-dun.vercel.app/tools/match")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs px-3 py-1.5 rounded-full bg-blue-700 text-white hover:bg-blue-800 transition-colors"
+                >
+                  Share on LinkedIn
+                </a>
+                <button
+                  onClick={() => navigator.clipboard.writeText(`I got a ${results.score}% ATS match score! Check yours: https://coverletter-ai-dun.vercel.app/tools/match`)}
+                  className="text-xs px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors"
+                >
+                  Copy link
+                </button>
+              </div>
             </section>
 
             {results.missing.length > 0 && (
@@ -273,10 +298,13 @@ export default function MatchScorer() {
       <footer className="border-t border-slate-200 py-6">
         <div className="mx-auto max-w-5xl px-6 text-center text-sm text-slate-500">
           CoverCraft AI &mdash; AI-powered job application tools
-          <span className="mx-2">&middot;</span>
-          <a href="/tools/keywords" className="text-blue-600 hover:underline">Keyword Scanner</a>
-          <span className="mx-2">&middot;</span>
-          <a href="/interview" className="text-blue-600 hover:underline">Interview Prep</a>
+          <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
+            <a href="/" className="text-blue-600 hover:underline">Cover Letter Generator</a>
+            <a href="/tools/keywords" className="text-blue-600 hover:underline">Keyword Scanner</a>
+            <a href="/interview" className="text-blue-600 hover:underline">Interview Prep</a>
+            <a href="/blog/cover-letter-examples" className="text-blue-600 hover:underline">Cover Letter Examples</a>
+            <a href="/blog/ats-resume-tips" className="text-blue-600 hover:underline">ATS Resume Tips</a>
+          </div>
         </div>
       </footer>
     </div>
