@@ -225,6 +225,7 @@ export default function BlogPost() {
           <div className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1">
             <a href="/blog/ats-resume-tips" className="text-blue-600 hover:underline">ATS Resume Tips</a>
             <a href="/blog/cover-letter-examples" className="text-blue-600 hover:underline">Cover Letter Examples</a>
+            <a href="/blog/cover-letter-no-experience" className="text-blue-600 hover:underline">No Experience Guide</a>
             <a href="/tools/match" className="text-blue-600 hover:underline">Free ATS Match Score</a>
             <a href="/tools/keywords" className="text-blue-600 hover:underline">Keyword Scanner</a>
             <a href="/interview" className="text-blue-600 hover:underline">Interview Prep</a>
