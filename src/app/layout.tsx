@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "Generate tailored cover letters in seconds with AI. Just $3.99 per letter.",
   },
   alternates: {
-    canonical: process.env.NEXT_PUBLIC_BASE_URL || "https://covercraftai.com",
+    canonical: (process.env.NEXT_PUBLIC_BASE_URL || "https://covercraftai.com").replace(/\/+$/, ""),
   },
 };
 

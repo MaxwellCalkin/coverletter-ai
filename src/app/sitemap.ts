@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://covercraftai.com";
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || "https://covercraftai.com").replace(/\/+$/, "");
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
     { url: `${baseUrl}/interview`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.9 },
